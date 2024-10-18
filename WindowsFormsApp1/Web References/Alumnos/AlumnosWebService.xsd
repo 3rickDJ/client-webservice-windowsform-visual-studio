@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://ws.proyecto.empresa.com/" targetNamespace="http://ws.proyecto.empresa.com/" version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="crearAlumno" type="tns:crearAlumno" />
+  <xs:element name="crearAlumnoResponse" type="tns:crearAlumnoResponse" />
+  <xs:element name="encontrarAlumno" type="tns:encontrarAlumno" />
+  <xs:element name="encontrarAlumnoResponse" type="tns:encontrarAlumnoResponse" />
+  <xs:element name="hello" type="tns:hello" />
+  <xs:element name="helloResponse" type="tns:helloResponse" />
+  <xs:element name="listarAlumno" type="tns:listarAlumno" />
+  <xs:element name="listarAlumnoResponse" type="tns:listarAlumnoResponse" />
+  <xs:complexType name="crearAlumno">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="nombreAlumno" type="xs:string" />
+      <xs:element name="Edad" type="xs:int" />
+      <xs:element minOccurs="0" name="gradoEscolar" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="crearAlumnoResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="hello">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="name" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="helloResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="listarAlumno">
+    <xs:sequence />
+  </xs:complexType>
+  <xs:complexType name="listarAlumnoResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="return" type="tns:alumnos" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="alumnos">
+    <xs:sequence>
+      <xs:element name="edad" type="xs:int" />
+      <xs:element minOccurs="0" name="gradoEscolar" type="xs:string" />
+      <xs:element name="id" type="xs:int" />
+      <xs:element minOccurs="0" name="nombre" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="encontrarAlumno">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="usuario" type="xs:string" />
+      <xs:element minOccurs="0" name="contrasena" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="encontrarAlumnoResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>
